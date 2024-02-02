@@ -54,7 +54,9 @@
                         <button type="button" class="form-password-control-button fa fa-eye-slash" id="toggler"></button>
                     </div>
                     @error('password')
-                    <strong>{{ $message }}</strong>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
             </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Sign in</button>

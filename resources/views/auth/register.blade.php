@@ -1,77 +1,107 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
+@section('title','Add User')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- valifation types -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Form Pendaftaran</h5>
+                    <div class="card-body">
+                        <form action="{{route('pushregister')}}" id="validationform" method="post">
+                            @csrf
+                            <div class="row" align-items="center">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label text-sm-right" style="margin-left: 4px;">Nama User</label>
+                                        <div>
+                                            <input class="form-control form-control-lg" type="text" name="name" placeholder="Username">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label text-sm-right" style="margin-left: 4px;">NIK</label>
+                                        <div>
+                                            <input class="form-control form-control-lg" type="text" name="nik" data-parsley-maxlength="5" placeholder="NIK">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="row" align-items="center">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <div>
+                                            <label class="col-form-label text-sm-right" style="margin-left: 4px;">Password</label>
+                                            <div class="form-password-group" style="margin: 0px;">
+                                                <input class="form-password-control form-control-lg" type="password" name="password" required placeholder="Password Min:6 digits" id="password">
+                                                <button type="button" class="form-password-control-button fa fa-eye-slash" style="padding: 10px;" id="toggler"></button>
+                                            </div>
+                                        </div>
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <div>
+                                            <label class="col-form-label text-sm-right" style="margin-left: 4px;">Confirm Password</label>
+                                            <div class="form-password-group" style="margin: 0px;">
+                                            <input class="form-password-control form-control-lg" type="password" name="password_confirmation" placeholder="Confirm Password" id="confirm_password">
+                                            <button type="button" class="form-password-control-button fa fa-eye-slash" style="padding: 10px;" id="confirm_toggler"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="card-body">
+                                <h4>Department</h4>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department" value="Engginering" class="custom-control-input">
+                                        <span class="custom-control-label">Engginering</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department"  value="IT" class="custom-control-input">
+                                            <span class="custom-control-label">IT</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department" value="Assembly" class="custom-control-input">
+                                            <span class="custom-control-label">Assembly</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department"  value="Pressing" class="custom-control-input">
+                                        <span class="custom-control-label">Pressing</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department" value="Wealding" class="custom-control-input">
+                                        <span class="custom-control-label">Wealding</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="department" value="Spot" class="custom-control-input">
+                                        <span class="custom-control-label">Spot</span>
+                                    </label>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="form-group row text-right">
+                                <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                    <button type="button" href="{{route('manageuser')}}" class="btn btn-space btn-secondary">Cancel</button>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    @endsection
+    @push('style')
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/inputmask/css/inputmask.css')}}">
+    @endpush
+    @push('script')
+        <!-- custom js -->
+        <script src="{{asset('assets/vendor/inputmask/js/jquery.inputmask.bundle.js')}}"></script>
+        <script src="{{asset('assets/vendor/custom-js/hardcoded.js')}}"></script>
+    @endpush

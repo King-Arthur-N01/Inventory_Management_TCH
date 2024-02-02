@@ -13,22 +13,6 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
     public function indexlogin() {
         return view('auth.login');
     }
@@ -51,8 +35,8 @@ class LoginController extends Controller
     return redirect("login")->with('You are not allowed to access');
     }
     public function signout(){
-    Session::flush();
-    Auth::logout();
+        Session::flush();
+        Auth::logout();
     return Redirect('login');
     }
 }

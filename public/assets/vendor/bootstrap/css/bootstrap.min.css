@@ -76,7 +76,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff
+    background-color: #242849;
 }
 
 [tabindex="-1"]:focus {
@@ -633,6 +633,13 @@ pre code {
     margin-right: -15px;
     margin-left: -15px
 }
+
+.row-card-custom {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 
 .no-gutters {
     margin-right: 0;

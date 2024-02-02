@@ -238,6 +238,12 @@ ul li {}
     color: #3d3f5d;
 }
 
+.title-content {
+    margin: 0px;
+    padding: 6px;
+    line-height: 2;
+    font-size: 24px;
+}
 
 /*--------------------
  Form
@@ -1292,10 +1298,10 @@ Top Header
 
 .navbar-brand {
     display: inline-block;
-    margin-right: 1rem;
+    margin: 0px 29px 0px 29px;
     line-height: inherit;
     white-space: nowrap;
-    padding: 11px 20px;
+    padding: 11px 30px;
     font-size: 30px;
     text-transform: uppercase;
     font-weight: 700;
@@ -3260,8 +3266,71 @@ btn-link
 2.3  Cards
 -------------------------*/
 
+/* <<<================================ CSS CARD DASHBOARD ================================>>> */
+
+.card-dashboard{
+    padding: 0px 12px 0px 11px;
+    margin: 0px 0px 0px 0px;
+}
+
+.card-custom-1{
+    background-color: #148cdb;
+    border-radius: 6px;
+}
+
+.card-footer-item-custom-1 {
+    width: 100%;
+    padding: 8px 0px;
+    -webkit-box-flex: 1;
+    border: 3px solid #148cdb;
+    border-radius: 10px;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+    display: inline-block;
+    background-color: white;
+}
+
+.card-custom-2{
+    background-color: #05c2a4;
+    border-radius: 6px;
+}
+
+.card-footer-item-custom-2 {
+    width: 100%;
+    padding: 8px 0px;
+    -webkit-box-flex: 1;
+    border: 3px solid #05c2a4;
+    border-radius: 10px;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+    display: inline-block;
+    background-color: white;
+}
+
+.card-custom-3{
+    background-color: #ffcc11;
+    border-radius: 6px;
+}
+
+.card-footer-item-custom-3 {
+    width: 100%;
+    padding: 8px 0px;
+    -webkit-box-flex: 1;
+    border: 3px solid #ffcc11;
+    border-radius: 10px;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+    display: inline-block;
+    background-color: white;
+}
+
+/* <<<============================== CSS CARD DASHBOARD END ==============================>>> */
+
 .card {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: none;
     -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
     -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
@@ -3273,13 +3342,26 @@ btn-link
     border-bottom: 1px solid #e6e6f2;
 }
 
-.card-title {}
+.card-title {
+    color: white;
+    font-size: 24px;
+    text-align: right;
+}
 
 .card-subtitle {
     font-size: 14px;
 }
 
-.card-body {}
+.card-body {
+
+}
+
+.card-body-custom {
+    -ms-flex: 1 1 auto;
+    display: flex;
+    padding: 10px 0px 0px 0px;
+    flex-direction: column;
+}
 
 .card-text {}
 
@@ -3288,7 +3370,9 @@ btn-link
     background: #f6f6ff;
 }
 
-.card-link {}
+.card-link {
+    padding: 0px 10px 0px 0px;
+}
 
 .toolbar {
     font-size: 18px;
@@ -6775,6 +6859,62 @@ form.dropzone {
     display: flex;
     align-items: center;
 }
+
+/* ==========================================================================
+Popup AJAX
+========================================================================== */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+#submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+End Popup AJAX
+========================================================================== */
 
 
 /* ==========================================================================

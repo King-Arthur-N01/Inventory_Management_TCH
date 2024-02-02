@@ -1,20 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" rel="icon" size="512x512" href="{{asset('assets\icons\icon-logo-dashboard-1.png')}}">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/circular-std/style.css">
-    <link rel="stylesheet" href="assets/libs/css/style.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/datepicker/tempusdominus-bootstrap-4.css">
+    <link rel="icon" href="{{asset('assets\icons\icon-logo-dashboard-1')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/circular-std/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/libs/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/fontawesome/css/fontawesome-all.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/themify-icons/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/simple-line-icons/css/simple-line-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fonts/flag-icon-css/flag-icon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/datepicker/tempusdominus-bootstrap-4.css')}}" type="text/css">
 
     @stack('style')
     <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
@@ -28,8 +29,9 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top" style="box-shadow: 0px 1px 10px 0px #aaaaaa">
-                <a class="navbar-brand" href="{{ route('home')}}">Concept</a>
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="{{route('home')}}">Concept</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -87,48 +89,16 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown connection">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                                <li class="connection-list">
-                                    <div class="row">
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/github.png" alt="" > <span>Github</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/dribbble.png" alt="" > <span>Dribbble</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/dropbox.png" alt="" > <span>Dropbox</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/bitbucket.png" alt=""> <span>Bitbucket</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="assets/icons/slack.png" alt="" > <span>Slack</span></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="conntection-footer"><a href="#">More</a></div>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img nav-user-name" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/icons/avatar-2.png" class="user-avatar-md rounded-circle"> {{Auth::user()->name}} </a>
+                            <a class="nav-link nav-user-img nav-user-name" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/icons/avatar-1.png" class="user-avatar-md rounded-circle"> {{Auth::user()->name}} </a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">Selamat Datang {{Auth::user()->name}}</h5>
                                     <span class="status"></span><span class="ml-2">{{Auth::user()->department}}</span>
                                 </div>
-                                <a class="dropdown-item" href="{{ route('account')}}"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="{{ route('logout')}}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="{{route('logout')}}"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -154,14 +124,14 @@
                                 <a class="nav-link active" href="{{route('home')}}"><i class="fas fa-fw fa-home"></i>Dashboard</a>
                                 {{-- ========================== batas menu ========================== --}}
                                 <div>
-                                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1"><i class="fas fa-fw fa-chart-area"></i>Monitoring</a>
+                                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1"><i class="fas fa-fw fa-chart-area"></i>Monitoring Stock</a>
                                     <div id="submenu-1" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{route('monitoring')}}">System Info</a>
+                                                <a class="nav-link" href="{{route('managestock')}}">Stock Tooling</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{route('datatable')}}">Data Tables</a>
+                                                <a class="nav-link" href="#">Stock Jigs</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -172,7 +142,7 @@
                                     <div id="submenu-2" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                @can('view selection', Post::class)
+                                                @can('view posts', Post::class)
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('manageuser')}}">Manage User</a>
                                                     </li>
