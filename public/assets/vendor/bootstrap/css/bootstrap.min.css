@@ -2367,6 +2367,7 @@ select.form-password-control-lg:not([size]):not([multiple]) {
     margin-bottom: 1rem;
     display: flex;
     border: 1px solid #d2d2e4;
+    border-radius: 5px;
 }
 .form-text {
     display: block;
