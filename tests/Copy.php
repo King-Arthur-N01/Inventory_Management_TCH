@@ -97,3 +97,63 @@
     </div>
 </body>
 </html>
+
+open-popup
+
+data-toggle="modal" data-target="#AdditemsModal"
+
+
+(function (e, t) {
+    "object" == typeof module && "object" == typeof module.exports
+        ? (module.exports = e.document
+            ? t(e, {})
+            : function (e) {
+                  if (!e.document)
+                      throw new Error("jQuery requires a window with a document");
+                  return t(e);
+              })
+        : t(e);
+})(typeof window !== "undefined" ? window : this, function (e, t) {
+    "use strict";
+    var n = [],
+        r = Object.getPrototypeOf,
+        i = n.slice,
+        o = n.concat,
+        a = n.push,
+        s = n.indexOf,
+        u = {},
+        l = u.toString,
+        c = u.hasOwnProperty,
+        f = c.toString,
+        p = f.call(Object),
+        d = {},
+        h = function (e) {
+            return "function" == typeof e && "number" != typeof e.nodeType;
+        },
+        g = function (e) {
+            return null != e && e === e.window;
+        },
+        v = e.document,
+        m = { type: !0, src: !0, nonce: !0, noModule: !0 };
+    function y(e, t, n) {
+        var r = t ? t.ownerDocument || t : v;
+        return (
+            (e =
+                e instanceof r.Element || e instanceof r.Document
+                    ? e
+                    : r.createElement(e)),
+            n ? t.appendChild(e) : r.body.appendChild(e),
+            e
+        );
+    }
+    function x(e) {
+        return e.replace(/::/g, "/").replace(/\*/g, "[\\s\\S]*");
+    }
+    function b(e, t, n) {
+        var r = "" !== e;
+        return (
+            t &&
+                ((n = "boolean" == typeof n ? !r : n),
+                (r = r && n)),
+            function (i, o) {
+                if (void 

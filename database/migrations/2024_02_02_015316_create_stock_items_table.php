@@ -17,6 +17,8 @@ class CreateStockItemsTable extends Migration
             $table->id();
             $table->string('product_name');
             $table->string('product_code');
+            $table->string('product_type');
+            $table->string('product_brand');
             $table->string('category');
             $table->string('status');
             $table->bigInteger('quantity');

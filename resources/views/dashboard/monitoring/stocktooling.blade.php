@@ -9,11 +9,13 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <h5 class="card-header">Items Stock</h5>
+                    @can('view selection', Post::class)
                     <div class="col-sm-12 col-md-12">
                         <div class="dt-buttons">
-                            <button type="button" class="btn btn-block btn-primary open-popup" href="" tabindex="0" aria-controls="example" data-toggle="modal" data-target="#AdditemsModal">+ Tambah Barang</button>
+                            <a type="button" class="btn btn-block btn-primary" href="{{route('additems')}}" tabindex="0" aria-controls="example">+ Tambah Barang</a>
                         </div>
                     </div>
+                    @endcan
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered second" style="width:100%">
@@ -39,7 +41,7 @@
                                     <td>{{$stockitem->quantity}}</td>
                                     <td>{{$stockitem->minimum_quantity}}</td>
                                     <td><a class="btn btn-primary btn-xm" style="color:white" href="">Edit</a>
-                                        <a class="btn btn-primary btn-xm" style="color:white" href="{{route('deleteitems',$stockitems->id)}}" onclick="return confirm('Yakin Hapus?')">Delete</a>
+                                        <a class="btn btn-primary btn-xm" style="color:white" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -67,7 +69,7 @@
         <!-- ============================================================== -->
         <!-- MODAL BOOSTRAP POPUP -->
         <!-- ============================================================== -->
-        <div class="modal fade" id="AdditemsModal" tabindex="-1" role="dialog" aria-labelledby="AdditemsModalModalLabel" aria-hidden="true">
+        {{-- <div class="modal fade" id="AdditemsModal" tabindex="-1" role="dialog" aria-labelledby="AdditemsModalModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -161,7 +163,7 @@
                 </div>
             </div>
             </div>
-        </div>
+        </div> --}}
         <!-- ============================================================== -->
         <!-- END MODAL BOOSTRAP POPUP -->
         <!-- ============================================================== -->

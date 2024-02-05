@@ -57,7 +57,7 @@
 @endsection
 
 @push('style')
-    <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/vendor/datatables/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/datatables/css/dataTables.bootstrap4.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/datatables/css/buttons.bootstrap4.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/datatables/css/select.bootstrap4.css')}}">
@@ -87,5 +87,5 @@
     <script>
         $("table-user").DataTable();
     </script>
-{{-- <=======================BATAS HARDCODED JAVASCRIPT END!!!!=======================> --}}
+    {{-- <=======================BATAS HARDCODED JAVASCRIPT END!!!!=======================> --}}
 @endpush
