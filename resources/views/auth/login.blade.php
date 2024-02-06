@@ -45,29 +45,21 @@
             <div class="card-body">
                 <form action="{{ route('pushlogin') }}" method="post" style="form-style">
                     @csrf
-                    @if (session('error'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            {{ session('error') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control form-control-lg @error('nik') is-invalid @enderror" name="nik" type="text" placeholder="NIK" autocomplete="off">
-                        </div>
-                        @error('nik')
+                    <div class="form-group">
+                        <input class="form-control form-control-lg @error('nik') is-invalid @enderror" name="nik" type="text" placeholder="NIK" autocomplete="off">
+                    </div>
+                    @error('nik')
+                        <strong>{{ $message }}</strong>
+                    @enderror
+                    <div class="form-password-group">
+                        <input class="form-password-control form-password-control-lg @error('password') is-invalid @enderror" name="password" type="password" placeholder="Password" id="password">
+                        <button type="button" class="form-password-control-button fa fa-eye-slash" id="toggler"></button>
+                    </div>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
-                        @enderror
-                        <div class="form-password-group">
-                            <input class="form-password-control form-password-control-lg @error('password') is-invalid @enderror" name="password" type="password" placeholder="Password" id="password">
-                            <button type="button" class="form-password-control-button fa fa-eye-slash" id="toggler"></button>
-                        </div>
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    @endif
+                        </span>
+                    @enderror
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Sign in</button>
             </form>

@@ -79,7 +79,6 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
     <script src="{{asset('assets/vendor/datatables/js/data-table.js')}}"></script>
-    {{-- <script src="{{asset('assets/vendor/datatables/js/buttons.bootstrap4.min.js')}}"></script> --}}
     <script src="{{asset('assets/vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('assets/vendor/multi-select/js/jquery.multi-select.js')}}"></script>
 

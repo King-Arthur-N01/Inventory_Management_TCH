@@ -4,6 +4,7 @@ namespace App\Http\Controllers\StockMonitoring;
 
 use App\Http\Controllers\Controller;
 use App\StockItems;
+use App\User;
 use Illuminate\Http\Request;
 
 class StockitemsController extends Controller
@@ -30,23 +31,25 @@ class StockitemsController extends Controller
             'product_code' => 'required',
             'product_type',
             'product_brand',
-            'category' => 'required',
-            'status' => 'required',
             'quantity' => 'required',
-            'minimum_quantity' => 'required'
+            'minimum_quantity' => 'required',
+            'category' => 'required',
+            'product_note'
         ]);
         StockItems::create($request->all());
-        return redirect()->route("home")->withSuccess('Items added successfully.');
+        return redirect()->route("managestock")->withSuccess('Items added successfully.');
     }
     public function updateitems(Request $request, $id)
     {
         $request->validate([
             'product_name' => 'required|max:255',
             'product_code' => 'required',
-            'category' => 'required',
-            'status' => 'required',
+            'product_type',
+            'product_brand',
             'quantity' => 'required',
-            'minimum_quantity' => 'required'
+            'minimum_quantity' => 'required',
+            'category' => 'required',
+            'product_note'
         ]);
         $stockitems = StockItems::find($id);
         $stockitems->update($request->all());
@@ -55,6 +58,6 @@ class StockitemsController extends Controller
     public function deleteitem($id)
     {
         StockItems::where('id',$id)->delete();
-        return redirect()->route("home")->with('success', 'Items deleted successfully');
+        return redirect()->route("managestock")->with('success', 'Items deleted successfully');
     }
 }

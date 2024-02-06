@@ -17,7 +17,7 @@ class PermissionMiddleware
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if(!$user->hasRole('manager'))
+        if(!$user->hasRole('user'))
         {
             //you can throw a 401 unauthorized error here instead of redirecting back
             return redirect()->back(); //this redirects all non-admins back to their previous url's

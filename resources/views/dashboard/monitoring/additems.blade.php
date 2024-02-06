@@ -73,19 +73,25 @@
                                     <div>
                                         <select selected="selected" class="form-control" name="category" id="category-input">
                                             <option value="" selected disabled hidden>Select Category:</option>
-                                            <option value="">Bulgaria</option>
-                                            <option value="">Canada</option>
-                                            <option value="">Egypt</option>
-                                            <option value="">Fiji</option>
-                                            <option value="">India</option>
-                                            <option value="">Japan</option>
-                                            <option value="">Iran (Islamic Republic of)</option>
-                                            <option value="">Lao People's Democratic Republic</option>
-                                            <option value="">Micronesia (Federated States of)</option>
-                                            <option value="">Nicaragua</option>
-                                            <option value="">Senegal</option>
-                                            <option value="">Tajikistan</option>
-                                            <option value="">Yemen</option>
+                                            <option value="Proximity Sensor">Proximity Sensor</option>
+                                            <option value="Sensor Controller">Sensor Controller</option>
+                                            <option value="Photo sensor">Photo sensor</option>
+                                            <option value="Counter">Counter</option>
+                                            <option value="Timer">Timer</option>
+                                            <option value="Relay">Relay</option>
+                                            <option value="Socket Relay">Socket Relay</option>
+                                            <option value="Contact Block">Contact Block</option>
+                                            <option value="Switch">Switch</option>
+                                            <option value="Valve">Valve</option>
+                                            <option value="Socket Push Button">Socket Push Button</option>
+                                            <option value="Digital FO Sensor">Digital FO sensor</option>
+                                            <option value="Power Supply">Power Supply</option>
+                                            <option value="Pressure Control">Pressure Control</option>
+                                            <option value="Remote Crane">Remote Crane</option>
+                                            <option value="Warning Light">Warning Light</option>
+                                            <option value="Pilot Lamp">Pilot Lamp</option>
+                                            <option value="Thermal Overload">Thermal Overload</option>
+                                            <option value="Contractor">Contractor</option>
                                         </select>
                                     </div>
                                 </div>
@@ -94,7 +100,7 @@
                                 <div class="form-group">
                                     <label class="col-form-label text-sm-right" style="margin-left: 4px;">Keterangan</label>
                                     <div>
-                                        <input class="form-control form-control-lg" type="text" name="note" placeholder="Contoh: Warna Hijau">
+                                        <input class="form-control form-control-lg" type="text" name="product_note" placeholder="Contoh: Warna Hijau">
                                     </div>
                                 </div>
                             </div>

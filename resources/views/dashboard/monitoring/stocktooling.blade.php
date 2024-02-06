@@ -8,8 +8,8 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Items Stock</h5>
-                    @can('view selection', Post::class)
+                <h4 class="card-header">Item List</h4>
+                    @can('view posts', Permission::class)
                     <div class="col-sm-12 col-md-12">
                         <div class="dt-buttons">
                             <a type="button" class="btn btn-block btn-primary" href="{{route('additems')}}" tabindex="0" aria-controls="example">+ Tambah Barang</a>
@@ -17,43 +17,52 @@
                     </div>
                     @endcan
                 <div class="card-body">
+                    @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered second" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Product Name</th>
-                                    <th>Product Code</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Type</th>
+                                    <th>Brand</th>
                                     <th>Quantity</th>
-                                    <th>Minimum Quantity</th>
+                                    <th>Min Quantity</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($stockitems as $stockitem)
                                 <tr>
-                                    <td>{{$stockitem->id}}</td>
                                     <td>{{$stockitem->product_name}}</td>
                                     <td>{{$stockitem->product_code}}</td>
-                                    <td>{{$stockitem->category}}</td>
-                                    <td>{{$stockitem->status}}</td>
+                                    <td>{{$stockitem->product_type}}</td>
+                                    <td>{{$stockitem->product_brand}}</td>
                                     <td>{{$stockitem->quantity}}</td>
                                     <td>{{$stockitem->minimum_quantity}}</td>
-                                    <td><a class="btn btn-primary btn-xm" style="color:white" href="">Edit</a>
-                                        <a class="btn btn-primary btn-xm" style="color:white" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')">Delete</a>
+                                    <td>{{$stockitem->product_note}}</td>
+                                    <td>{{$stockitem->category}}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-xs" style="color:white" href="">Edit</a>
+                                        <a class="btn btn-primary btn-xs" style="color:white" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Product Name</th>
-                                    <th>Product Code</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Type</th>
+                                    <th>Brand</th>
                                     <th>Quantity</th>
-                                    <th>Minimum Quantity</th>
+                                    <th>Min Quantity</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -179,17 +188,17 @@
 
 @push('script')
 
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
-<script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
-<script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
-<script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+<script src="{{asset('assets/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/ajax/jszip.min.js')}}"></script>
+
+<script src="{{asset('assets/vendor/datatables/ajax/vfs_fonts.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/buttons.colVis.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/dataTables.rowGroup.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/dataTables.select.min.js')}}"></script>
+<script src="{{asset('assets/vendor/datatables/js/dataTables.fixedHeader.min.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/buttons.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/data-table.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>

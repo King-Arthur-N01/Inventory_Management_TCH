@@ -19,10 +19,10 @@ class CreateStockItemsTable extends Migration
             $table->string('product_code');
             $table->string('product_type');
             $table->string('product_brand');
-            $table->string('category');
-            $table->string('status');
             $table->bigInteger('quantity');
             $table->bigInteger('minimum_quantity');
+            $table->string('category');
+            $table->string('product_note');
             $table->timestamps();
         });
     }
