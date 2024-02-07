@@ -191,7 +191,6 @@
 <script src="{{asset('assets/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/ajax/jszip.min.js')}}"></script>
-
 <script src="{{asset('assets/vendor/datatables/ajax/vfs_fonts.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('assets/vendor/datatables/js/buttons.print.min.js')}}"></script>
