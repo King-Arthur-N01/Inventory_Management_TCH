@@ -10,12 +10,9 @@ use Illuminate\Http\Request;
 class StockitemsController extends Controller
 {
     public function __construct(){
-        $this->middleware('permission:view posts', ['only' => ['readusertable']]);
-        $this->middleware('permission:create posts', ['only' => ['create', 'store']]);
-        $this->middleware('permission:edit posts', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:delete posts', ['only' => ['destroy']]);
-        $this->middleware('permission:publish posts', ['only' => ['publish']]);
-        $this->middleware('permission:unpublish posts', ['only' => ['unpublish']]);
+        $this->middleware('permission:view posts', ['only' => ['indexregisteritems']]);
+        $this->middleware('permission:create posts', ['only' => ['createitems']]);
+        $this->middleware('permission:delete posts', ['only' => ['deleteitem']]);
     }
     public function indexregisteritems(){
         return view ('dashboard.monitoring.additems');
@@ -26,6 +23,7 @@ class StockitemsController extends Controller
     }
     public function createitems(Request $request)
     {
+        // dd($request);
         $request->validate([
             'product_name' => 'required|max:255',
             'product_code' => 'required',

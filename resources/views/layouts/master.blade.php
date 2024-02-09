@@ -90,7 +90,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img nav-user-name" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="#" class="user-avatar-md rounded-circle"> {{Auth::user()->name}} </a>
+                            <a class="nav-link nav-user-img nav-user-name" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('assets/images/avatar-1.png')}}" class="user-avatar-md rounded-circle"> {{Auth::user()->name}} </a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">Selamat Datang {{Auth::user()->name}}</h5>
@@ -142,7 +142,7 @@
                                     <div id="submenu-2" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                @can('view posts', Permission::class)
+                                                @can('view posts', Role::class)
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('manageuser')}}">Manage User</a>
                                                     </li>

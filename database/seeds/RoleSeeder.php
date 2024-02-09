@@ -2,9 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\PermissionRegistrar;
-use Spatie\Permission\Models\Permission;
-
 class RoleSeeder extends Seeder
 {
     /**
@@ -14,14 +11,15 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::Create([
-            'name' => 'admin',
-            'guard_name' => 'web'
-        ]);
+        $userRole = Role::create(['name' => 'user','guard_name' => 'web']);
+        $userRole->givePermissionTo('edit posts');
 
-        Role::Create([
-            'name' => 'user',
-            'guard_name' => 'web'
-        ]);
+        $adminRole = Role::create(['name' => 'admin','guard_name' => 'web']);
+        $adminRole->givePermissionTo('view posts');
+        $adminRole->givePermissionTo('create posts');
+        $adminRole->givePermissionTo('edit posts');
+        $adminRole->givePermissionTo('delete posts');
+        $adminRole->givePermissionTo('publish posts');
+        $adminRole->givePermissionTo('unpublish posts');
     }
 }

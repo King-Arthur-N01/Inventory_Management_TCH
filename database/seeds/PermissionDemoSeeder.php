@@ -29,10 +29,7 @@ class PermissionDemoSeeder extends Seeder
 
         //create roles and assign existing permissions
         $userRole = Role::create(['name' => 'user']);
-        // $userRole->givePermissionTo('view posts');
-        // $userRole->givePermissionTo('create posts');
         $userRole->givePermissionTo('edit posts');
-        // $userRole->givePermissionTo('delete posts');
 
         $adminRole = Role::create(['name' => 'admin']);
         $adminRole->givePermissionTo('view posts');

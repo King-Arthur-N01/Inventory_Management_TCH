@@ -9,13 +9,13 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <h4 class="card-header">Item List</h4>
-                    @can('view posts', Permission::class)
                     <div class="col-sm-12 col-md-12">
+                        @can('view posts', Role::class)
                         <div class="dt-buttons">
                             <a type="button" class="btn btn-block btn-primary" href="{{route('additems')}}" tabindex="0" aria-controls="example">+ Tambah Barang</a>
                         </div>
+                        @endcan
                     </div>
-                    @endcan
                 <div class="card-body">
                     @if(session('success'))
                     <div class="alert alert-success">{{ session('success') }}</div>
@@ -47,25 +47,16 @@
                                     <td>{{$stockitem->product_note}}</td>
                                     <td>{{$stockitem->category}}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-xs" style="color:white" href="">Edit</a>
-                                        <a class="btn btn-primary btn-xs" style="color:white" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')">Delete</a>
+                                        <a class="nav-link" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height: 20px" src="{{asset('assets/icons/list.png')}}"></a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                            <a class="button-table-custom-view" href="#"><img style="height: 20px" src="assets/icons/eye_white.png"></a>
+                                            <a class="button-table-custom-edit" href="#"><img style="height: 20px" src="assets/icons/edit_white.png"></a>
+                                            <a class="button-table-custom-delete" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')"><img style="height: 20px" src="assets/icons/trash_white.png"></a>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Code</th>
-                                    <th>Type</th>
-                                    <th>Brand</th>
-                                    <th>Quantity</th>
-                                    <th>Min Quantity</th>
-                                    <th>Description</th>
-                                    <th>Category</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

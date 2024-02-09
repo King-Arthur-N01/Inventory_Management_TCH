@@ -47,7 +47,7 @@ table.dataTable thead>tr>td.sorting_asc_disabled,
 table.dataTable thead>tr>td.sorting_desc_disabled {
     cursor: pointer;
     position: relative;
-    padding-right: 26px
+    padding-right: 26px;
 }
 
 table.dataTable thead>tr>th.sorting:before,
@@ -249,7 +249,7 @@ table.dataTable thead th,
 table.dataTable thead td,
 table.dataTable tfoot th,
 table.dataTable tfoot td {
-    text-align: left
+    /* text-align: left; */
 }
 
 table.dataTable thead th.dt-head-left,
@@ -659,7 +659,7 @@ table.dataTable td {
     background: -moz-linear-gradient(top, #585858 0%, #111 100%);
     background: -ms-linear-gradient(top, #585858 0%, #111 100%);
     background: -o-linear-gradient(top, #585858 0%, #111 100%);
-    background: linear-gradient(to bottom, #585858 0%, #111 100%)
+    background: linear-gradient(to bottom, #585858 0%, #111 100%);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {

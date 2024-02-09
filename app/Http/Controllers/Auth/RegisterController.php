@@ -16,10 +16,12 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     protected $redirectTo = RouteServiceProvider::HOME;
-    // public function __construct()
-    // {
-    //     $this->middleware('guest');
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view posts', ['only' => ['indexregistration']]);
+        $this->middleware('permission:create posts', ['only' => ['createuser']]);
+        $this->middleware('permission:delete posts', ['only' => ['deleteuser']]);
+    }
     public function indexregistration()
     {
         return view('auth.register');
