@@ -29,8 +29,10 @@ Route::post('/register','Auth\RegisterController@authenticatecreate')->name('pus
 Route::get('/userdelete/{id}','Auth\RegisterController@deleteuser')->name('deleteaccount');
 Route::get('/manageuser','Account\UsertableController@readusertable')->name('manageuser');
 
-Route::get('/registeritems','StockMonitoring\StockitemsController@indexregisteritems')->name('additems');
-Route::post('/registeritems','StockMonitoring\StockitemsController@createitems')->name('pushitems');
+Route::get('/registeritems','StockMonitoring\StockitemsController@indexregisteritems')->name('additem');
+Route::post('/registeritems','StockMonitoring\StockitemsController@createitems')->name('pushitem');
+Route::get('/updateitems/{id}','StockMonitoring\StockitemsController@indexupdateitems')->name('edititem');
+Route::put('/updateitems/{id}','StockMonitoring\StockitemsController@updateitems')->name('pushedititem');
 Route::get('/itemdelete/{id}','StockMonitoring\StockitemsController@deleteitem')->name('deleteitem');
 Route::get('/stockitems','StockMonitoring\StockitemsController@readstocktable')->name('managestock');
 

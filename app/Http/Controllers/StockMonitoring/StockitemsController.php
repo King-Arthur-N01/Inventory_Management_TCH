@@ -17,13 +17,16 @@ class StockitemsController extends Controller
     public function indexregisteritems(){
         return view ('dashboard.monitoring.additems');
     }
+    public function indexupdateitems($id){
+        $stockitems=StockItems::find($id);
+        return view ('dashboard.monitoring.edititems',['stockitems'=>$stockitems]);
+    }
     public function readstocktable(){
         $stockitems=StockItems::get();
         return view ('dashboard.monitoring.stocktooling',['stockitems'=>$stockitems]);
     }
     public function createitems(Request $request)
     {
-        // dd($request);
         $request->validate([
             'product_name' => 'required|max:255',
             'product_code' => 'required',

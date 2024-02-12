@@ -68,37 +68,27 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                        <table id="example" class="table table-striped table-bordered first" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Nama</th>
+                                    <th>Code</th>
+                                    <th>Type</th>
+                                    <th>Brand</th>
+                                    <th>Quantity</th>
+                                    <th>Taken By</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
+                                    <td>Skun Kabel Tembaga</td>
+                                    <td>1B</td>
+                                    <td>70</td>
+                                    <td>-</td>
+                                    <td>3</td>
+                                    <td>rusmono</td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

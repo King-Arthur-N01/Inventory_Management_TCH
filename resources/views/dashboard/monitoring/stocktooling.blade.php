@@ -12,7 +12,7 @@
                     <div class="col-sm-12 col-md-12">
                         @can('view posts', Role::class)
                         <div class="dt-buttons">
-                            <a type="button" class="btn btn-block btn-primary" href="{{route('additems')}}" tabindex="0" aria-controls="example">+ Tambah Barang</a>
+                            <a type="button" class="btn btn-block btn-primary" href="{{route('additem')}}" tabindex="0" aria-controls="example">+ Tambah Barang</a>
                         </div>
                         @endcan
                     </div>
@@ -47,10 +47,10 @@
                                     <td>{{$stockitem->product_note}}</td>
                                     <td>{{$stockitem->category}}</td>
                                     <td>
-                                        <a class="nav-link" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height: 20px" src="{{asset('assets/icons/list.png')}}"></a>
+                                        <a class="button-table-custom-action nav-link" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height: 20px" src="{{asset('assets/icons/list.png')}}"></a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                             <a class="button-table-custom-view" href="#"><img style="height: 20px" src="assets/icons/eye_white.png"></a>
-                                            <a class="button-table-custom-edit" href="#"><img style="height: 20px" src="assets/icons/edit_white.png"></a>
+                                            <a class="button-table-custom-edit" href="{{route('edititem',$stockitem->id)}}"><img style="height: 20px" src="assets/icons/edit_white.png"></a>
                                             <a class="button-table-custom-delete" href="{{route('deleteitem',$stockitem->id)}}" onclick="return confirm('Yakin Hapus?')"><img style="height: 20px" src="assets/icons/trash_white.png"></a>
                                         </div>
                                     </td>
