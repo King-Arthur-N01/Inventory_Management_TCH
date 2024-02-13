@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DebugController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -36,3 +37,4 @@ Route::put('/updateitems/{id}','StockMonitoring\StockitemsController@updateitems
 Route::get('/itemdelete/{id}','StockMonitoring\StockitemsController@deleteitem')->name('deleteitem');
 Route::get('/stockitems','StockMonitoring\StockitemsController@readstocktable')->name('managestock');
 
+Route::get('/debug', 'DebugController@debugindex');

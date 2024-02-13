@@ -31,7 +31,7 @@
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="{{route('home')}}">Concept</a>
-                <a class="button-table-custom-sidebar" id="sidebar_responsive"><img style="height: 20px" src="assets/icons/list.png"></a>
+                <a class="button-table-custom-sidebar" id="sidebar-toggle"><img style="height: 20px" src="assets/icons/list.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -111,51 +111,51 @@
         <!-- ============================================================== -->
         <!-- left sidebar -->
         <!-- ============================================================== -->
-        <div class="nav-left-sidebar sidebar-dark">
-            <div class="menu-list">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav flex-column">
-                            <li class="nav-divider">
-                                Menu
-                            </li>
-                            <li class="nav-item ">
-                                {{-- ========================== tempat untuk table sebelah kiri ========================== --}}
-                                <a class="nav-link active" href="{{route('home')}}"><i class="fas fa-fw fa-home"></i>Dashboard</a>
-                                {{-- ========================== batas menu ========================== --}}
-                                <div>
-                                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1"><i class="fas fa-fw fa-chart-area"></i>Monitoring Stock</a>
-                                    <div id="submenu-1" class="collapse submenu" style="">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{route('managestock')}}">Stock Tooling</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Stock Jigs</a>
-                                            </li>
-                                        </ul>
+        <div id="wrapper">
+            <div class="nav-left-sidebar sidebar-dark sidebar-wrapper">
+                <div class="menu-list">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav flex-column">
+                                <li class="nav-divider">Menu</li>
+                                <li class="nav-item ">
+                                    {{-- ========================== tempat untuk table sebelah kiri ========================== --}}
+                                    <a class="nav-link active" href="{{route('home')}}"><i class="fas fa-fw fa-home"></i>Dashboard</a>
+                                    {{-- ========================== batas menu ========================== --}}
+                                    <div>
+                                        <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1"><i class="fas fa-fw fa-chart-area"></i>Monitoring Stock</a>
+                                        <div id="submenu-1" class="collapse submenu" style="">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{route('managestock')}}">Stock Tooling</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Stock Jigs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- ========================== batas menu ========================== --}}
-                                <div>
-                                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2"><i class="ti-settings"></i>Setting</a>
-                                    <div id="submenu-2" class="collapse submenu" style="">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                @can('view posts', Role::class)
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('manageuser')}}">Manage User</a>
-                                                    </li>
-                                                @endcan
-                                            </li>
-                                        </ul>
+                                    {{-- ========================== batas menu ========================== --}}
+                                    <div>
+                                        <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2"><i class="ti-settings"></i>Setting</a>
+                                        <div id="submenu-2" class="collapse submenu" style="">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    @can('view posts', Role::class)
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="{{ route('manageuser')}}">Manage User</a>
+                                                        </li>
+                                                    @endcan
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- ========================== tempat untuk table sebelah kiri ========================== --}}
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                                    {{-- ========================== tempat untuk table sebelah kiri ========================== --}}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -213,7 +213,14 @@
     @stack('script')
 {{-- <=========================BATAS HARDCODED JAVASCRIPT!!!!=========================> --}}
     <script src="{{asset('assets/vendor/custom-js/clock.js')}}"></script>
+    <script>
+    $(document).ready(function(){
+    $("#sidebar-toggle").click(function(e){
+        e.preventDefault();
+        $("#wrapper").toggleClass("menuDisplayed");
+    });
+    });
+    </script>
 {{-- <=======================BATAS HARDCODED JAVASCRIPT END!!!!=======================> --}}
 </body>
-
 </html>
